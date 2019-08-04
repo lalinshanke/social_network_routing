@@ -5,6 +5,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AboutMeComponent } from './right-section/about-me/about-me.component';
 import { MyTalentComponent } from './right-section/my-talent/my-talent.component';
+import { RightSectionComponent } from './right-section/right-section.component';
 
 const routes: Routes = [
   {
@@ -13,15 +14,17 @@ const routes: Routes = [
   },
   {
     path: 'app-screen',
-    component: WrapperComponent
-  },
-  {
-    path: 'about-me',
-    component: AboutMeComponent
-  },
-  {
-    path: 'my-talent',
-    component: MyTalentComponent
+    component: WrapperComponent,
+    children:[
+      {
+        path: 'about-me',
+        component: AboutMeComponent
+      },
+      {
+        path: 'my-talent',
+        component: MyTalentComponent
+      },
+    ]
   },
   {
     path: '**',
